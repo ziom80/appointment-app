@@ -34,12 +34,13 @@ export class AppointmentListComponent implements OnInit {
     this.newAppointmentTitle = " ";
     this.newAppointmentDate = new Date(); 
 
-    alert(this.appointments.length)
+     localStorage.setItem("appointments",JSON.stringify(this.appointments))
   }
 }
   deleteAppointment(index: number)
   {
     this.appointments.splice(index,1)
+    localStorage.setItem("appointments",JSON.stringify(this.appointments))
   }
 
 }
